@@ -15,7 +15,7 @@ const ProductInfo = () => {
         <>
         <NavBar/>
         <div className='w-full py-10 flex justify-center items-center'>
-            <img className='h-[80vh]' src={productInfo.img} alt="" />
+            <img className='h-[80vh] object-cover' src={productInfo.img} alt="" />
         </div>
         </>
     )
