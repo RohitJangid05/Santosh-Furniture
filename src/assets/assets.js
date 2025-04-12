@@ -5,6 +5,7 @@ export let assets = {
     sofaCatalog: "/sofaCatalog.png",
     chairCatalog: "/chairCatalog.jpg",
     tableCatalog: "/tableCatalog.jpg",
+    diningSetcatalog:"/diningSetCatalog.avif",
     logo: "/logo.png"
 }
 
@@ -48,5 +49,13 @@ export let products = [
     { id: 33, name: "table", img: "/images/table3.webp" },
     { id: 34, name: "table", img: "/images/table4.jpg" },
     { id: 35, name: "table", img: "/images/table5.avif" },
-    { id: 36, name: "table", img: "/images/table6.webp" }
+    { id: 36, name: "table", img: "/images/table6.webp" },
+
+    {id:37, name:"diningset", img:"/images/diningSet1.png"},
+    {id:38, name:"diningset", img:"/images/diningSet2.png"},
+    {id:39, name:"diningset", img:"/images/diningSet3.webp"},
+    {id:40, name:"diningset", img:"/images/diningSet4.jpg"},
+    {id:41, name:"diningset", img:"/images/diningSet5.webp"},
+    {id:42, name:"diningset", img:"/images/diningSet6.webp"},
+    {id:43, name:"diningset", img:"/images/diningSet7.jpg"},
 ]

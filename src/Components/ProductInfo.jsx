@@ -15,7 +15,7 @@ const ProductInfo = () => {
         <>
         <NavBar/>
         <div className='w-full p-10 flex justify-center items-center'>
-            <img className='' src={productInfo.img} alt="" />
+            <img src={productInfo.img} alt="Product Img" />
         </div>
         </>
     )

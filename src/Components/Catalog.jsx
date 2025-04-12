@@ -9,8 +9,9 @@ const Catalog = () => {
     <div className='w-full flex flex-wrap justify-center gap-6 p-6 md:gap-10 md:p-10 '>
       {[
         { to: '/product/door', img: assets.doorCatalog, label: 'Door' },
-        { to: '/product/sofa', img: assets.sofaCatalog, label: 'Sofa' },
         { to: '/product/doorframe', img: assets.doorframeCatalog, label: 'Door Frame' },
+        { to: '/product/sofa', img: assets.sofaCatalog, label: 'Sofa' },
+        {to:'/product/diningset', img: assets.diningSetcatalog, label: "Dining Set"},
         { to: '/product/chair', img: assets.chairCatalog, label: 'Chair' },
         { to: '/product/table', img: assets.tableCatalog, label: 'Table' }
       ].map(({ to, img, label }, index) => (

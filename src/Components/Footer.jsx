@@ -1,8 +1,11 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import MapSection from "./MapSection";
 
 const Footer = () => {
   return (
+    <>
+    <MapSection/>
     <footer className="bg-gray-900 text-white py-10 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand Info */}
@@ -52,6 +55,7 @@ const Footer = () => {
         © {new Date().getFullYear()} SF Furniture. All rights reserved.
       </div>
     </footer>
+    </>
   );
 };
 

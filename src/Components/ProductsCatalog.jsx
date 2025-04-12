@@ -21,7 +21,7 @@ const ProductsCatalog = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {productData.map((e,i) => (
               <div key={e.id} className="bg-white rounded-xl shadow-sm shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300">
-                <Link to={`/productInfo/${e.id}`}><img src={e.img} alt={`product-${i}`} className="w-full h-60 object-contain" /></Link>
+                <Link onClick={()=>scrollTo(0,0)} to={`/productInfo/${e.id}`}><img src={e.img} alt={`product-${i}`} className="w-full h-60 object-contain" /></Link>
               </div>
             ))}
           </div>
