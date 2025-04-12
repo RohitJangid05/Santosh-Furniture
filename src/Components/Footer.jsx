@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand Info */}
         <div>
-          <h2 className="text-2xl font-bold">SF Furniture</h2>
+          <h2 className="text-2xl font-bold">Santosh Furniture</h2>
           <p className="text-sm mt-4 text-gray-400">
             Elevate your space with premium handcrafted furniture that blends style and comfort.
           </p>
@@ -52,7 +52,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} SF Furniture. All rights reserved.
+        © {new Date().getFullYear()} Santosh Furniture. All rights reserved.
       </div>
     </footer>
     </>
