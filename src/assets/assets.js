@@ -31,9 +31,9 @@ export let products = [
     { id: 19, name: "sofa", img: "/images/sofa8.jpg" },
 
     { id: 20, name: "doorframe", img: "/images/doorFrame1.webp" },
-    { id: 21, name: "doorframe", img: "/images/doorFrame2.png" },
+    { id: 21, name: "doorframe", img: "/images/doorFrame2.webp" },
     { id: 22, name: "doorframe", img: "/images/doorFrame3.webp" },
-    { id: 23, name: "doorframe", img: "/images/doorFrame4.jpg" },
+    { id: 23, name: "doorframe", img: "/images/doorFrame4.webp" },
     { id: 24, name: "doorframe", img: "/images/doorFrame5.webp" },
     { id: 25, name: "doorframe", img: "/images/doorFrame6.webp" },
 
