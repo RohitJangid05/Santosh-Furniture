@@ -4,7 +4,7 @@ import { assets } from '../assets/assets';
 const LandingPage = () => {
   return (
     <div className='w-full relative flex flex-col justify-center items-center'>
-      <div className='w-full flex justify-center bg-[#d8c4b2c9]'>
+      <div className='w-full flex justify-center bg-[#f8f5f2]'>
         <img
           className='w-full md:w-[90vw] h-[50vh] md:h-[80vh] object-cover'
           loading='lazy'

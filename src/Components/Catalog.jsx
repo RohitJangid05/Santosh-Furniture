@@ -19,7 +19,7 @@ const Catalog = () => {
         key={index}
         to={to}
         
-        className='flex flex-col justify-center items-center gap-3 w-32 sm:w-40 md:w-48 lg:w-52 rounded-xl hover:shadow-sm shadow-gray-400 p-3'
+        className='flex flex-col justify-center items-center gap-3 w-32 sm:w-40 md:w-48 lg:w-52 rounded-xl hover:shadow-sm shadow-[#d5a37acb] p-3'
         >
           <div>
           <img

@@ -1,12 +1,16 @@
 import React from 'react'
 import LandingPage from './LandingPage'
 import Catalog from './Catalog';
+import Hero from './Hero';
+import Footer from './Footer';
 
 const Home = () => {
   return (
-    <div>
+    <div >
       <LandingPage />
       <Catalog />
+      <Hero/>
+      {/* <Footer/> */}
     </div>
   )
 }
