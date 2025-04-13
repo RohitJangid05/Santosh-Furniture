@@ -1,12 +1,12 @@
 import React from 'react'
-import LandingPage from './LandingPage'
+import Banner from './Banner'
 import Catalog from './Catalog';
 import Hero from './Hero';
 
 const Home = () => {
   return (
     <div >
-      <LandingPage />
+      <Banner />
       <Catalog />
       <Hero/>
     </div>

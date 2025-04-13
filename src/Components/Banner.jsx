@@ -1,7 +1,7 @@
 import React from 'react';
 import { assets } from '../assets/assets';
 
-const LandingPage = () => {
+const Banner = () => {
   return (
     <div className='w-full relative flex flex-col justify-center items-center'>
       <div className='w-full flex justify-center bg-[#f8f5f2]'>
@@ -23,4 +23,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Banner;
