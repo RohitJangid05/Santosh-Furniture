@@ -27,9 +27,9 @@ export let products = [
     { id: "door-14", productName: "door", catogery: "Double Door", img: "/images/double-door3.webp" },
     { id: "door-15", productName: "door", catogery: "Double Door", img: "/images/double-door4.jpg" },
     { id: "door-16", productName: "door", catogery: "Double Door", img: "/images/double-door5.jpg" },
-    { id: "door-16", productName: "door", catogery: "Double Door", img: "/images/double-door6.jpg" },
-    { id: "door-17", productName: "door", catogery: "Double Door", img: "/images/double-door7.jpg" },
-    { id: "door-18", productName: "door", catogery: "Double Door", img: "/images/double-door8.jpg" },
+    { id: "door-17", productName: "door", catogery: "Double Door", img: "/images/double-door6.jpg" },
+    { id: "door-18", productName: "door", catogery: "Double Door", img: "/images/double-door7.jpg" },
+    { id: "door-19", productName: "door", catogery: "Double Door", img: "/images/double-door8.jpg" },
 
     { id: "sofa-1", productName: "sofa", catogery: "sofa 3 seater", img: "/images/sofa1.avif" },
     { id: "sofa-2", productName: "sofa", catogery: "sofa 3 seater", img: "/images/sofa2.png" },
