@@ -7,6 +7,7 @@ export let assets = {
     tableCatalog: "/tableCatalog.jpg",
     diningSetcatalog: "/diningSetCatalog.avif",
     bedCatalog: '/bedCatalog.webp',
+    moreCatalog:'/moreCatalog.png',
     logo: "/logo.png"
 }
 
@@ -83,4 +84,6 @@ export let products = [
     { id: "bed-9", productName: "bed", catogery: "bouble bed", img: "/images/bed9.jpg" },
     { id: "bed-10", productName: "bed", catogery: "bouble bed", img: "/images/bed10.jpg" },
     { id: "bed-11", productName: "bed", catogery: "bouble bed", img: "/images/bed11.webp" },
+
+    {id:"dif-01", productName:"more",img:'/images/more1.png'}
 ];

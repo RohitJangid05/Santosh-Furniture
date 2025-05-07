@@ -3,9 +3,26 @@
 body::-webkit-scrollbar{
     display: none;
 }
-body{
-   font-family: "Cinzel", serif;
+.title-heading{
+  font-family: "Cinzel", serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
 }
+body{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+

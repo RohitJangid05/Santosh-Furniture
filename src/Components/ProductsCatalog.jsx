@@ -103,7 +103,7 @@ const ProductsCatalog = () => {
                     className="w-full h-60 object-contain"
                   />
                 </Link>
-                <p>Product Id: {e.id}</p>
+                <div className='flex justify-around'><p>Product Id: {e.id}</p><button>Add</button></div>
               </div>
             ))}
           </div>

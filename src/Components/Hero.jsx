@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="relative bg-[#f8f5f2] overflow-hidden py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-gray-900 title-heading">
             Elevate Your Living <br /> with Timeless Furniture
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-md">

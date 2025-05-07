@@ -16,6 +16,7 @@ const Catalog = () => {
           { to: '/product/doorframe', img: assets.doorframeCatalog, label: 'Door Frame' },
           { to: '/product/chair', img: assets.chairCatalog, label: 'Chair' },
           { to: '/product/table', img: assets.tableCatalog, label: 'Table' },
+          { to: '/product/more', img: assets.moreCatalog, label: 'More' },
         ].map(({ to, img, label }, index) => (
           <Link
             onClick={() => scrollTo(0, 0)}
