@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import NavBar from './NavBar'
 import { products } from '../assets/assets'
 import { Link } from 'react-router-dom'
 import { FaSearch } from 'react-icons/fa'
+import { AppContext } from '../Context/FurnitureContext'
 
 const ProductsCatalog = () => {
   const [catogery, setCategory] = useState([])
@@ -11,6 +12,8 @@ const ProductsCatalog = () => {
   const [searchProduct, setSearchProduct] = useState("")
   const { productname, catogrey } = useParams()
   const { pathname } = useLocation()
+
+  let {setCartProduct}=useContext(AppContext)
 
   // Filter categories
   useEffect(() => {
@@ -55,7 +58,7 @@ const ProductsCatalog = () => {
   }, [productname, catogrey, pathname])
 
   return (
-    <div className='flex flex-col gap-3 items-center'>
+    <div className='flex flex-col gap-3 items-center w-full'>
       <NavBar />
       <div className='flex flex-wrap gap-4 w-full justify-center p-3 rounded-lg shadow-sm shadow-gray-400 bg-white'>
         <div className="flex flex-wrap gap-2 justify-center">
@@ -88,27 +91,35 @@ const ProductsCatalog = () => {
           </button>
         </form>
       </div>
-      <div className="p-4 md:p-8">
+
+      <div className="p-4 md:p-8`">
         {productData.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {productData.map((e, i) => (
               <div
                 key={e.id}
-                className="bg-white rounded-xl shadow-sm shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300"
+                className="bg-white min-w-72 rounded-xl shadow-sm  shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300"
               >
-                <Link onClick={() => scrollTo(0, 0)} to={`/productInfo/${e.id}`}>
+                
                   <img
                     src={e.img}
                     alt={`product-${i}`}
-                    className="w-full h-60 object-contain"
+                    className="w-full h-60 mb-5 object-contain"
                   />
-                </Link>
-                <div className='flex justify-around'><p>Product Id: {e.id}</p><button>Add</button></div>
+                
+                <div className='flex flex-col w-full  gap-2'>
+                  <p>Product Id: {e.id}</p>
+                  <div className='w-full flex justify-between'>
+                  <Link className='cursor-pointer bg-[#1E2938] text-white px-3 py-1 rounded-md' onClick={() => scrollTo(0, 0)} to={`/productInfo/${e.id}`}>View</Link>
+                  <button className='cursor-pointer bg-[#1E2938] text-white px-3 py-1 rounded-md' onClick={() => setCartProduct(prev => [...prev, e])}
+                  >Add</button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-center text-gray-600 text-lg">No products found.</p>
+          <p className="text-center text-gray-600 text-lg w-full h-[80vh] flex justify-center items-center">No products found.</p>
         )}
       </div>
     </div>

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { assets } from '../assets/assets';
+import { AppContext } from '../Context/FurnitureContext';
 
 const Catalog = () => {
+  let {assets}=useContext(AppContext)
   return (
     <>
       <h1 className='text-center mt-5 font-semibold capitalize text-4xl p-3 text-[#364152]'>Categories</h1>
