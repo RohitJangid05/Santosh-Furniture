@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa'
 import NavBar from './NavBar'
 import { products } from '../assets/assets'
 import { AppContext } from '../Context/FurnitureContext'
+import { ToastContainer, toast } from 'react-toastify';
 
 const ProductsCatalog = () => {
   const [catogery, setCategory] = useState([])
@@ -27,23 +28,28 @@ const ProductsCatalog = () => {
   }, [productname])
 
   // Search + Reset Logic
-  useEffect(() => {
-    const filteredProducts = products.filter(e => e.productName === productname)
+useEffect(() => {
+  const filteredProducts = products.filter(e => e.productName === productname);
 
-    if (searchProduct.trim() === "") {
-      if (pathname === `/product/${productname}`) {
-        setProductData(filteredProducts)
-      } else {
-        const filteredCategory = filteredProducts.filter(e => e.catogery === catogrey)
-        setProductData(filteredCategory)
-      }
+  if (searchProduct.trim() === "") {
+    if (pathname === `/product/${productname}`) {
+      setProductData(filteredProducts);
     } else {
-      const searchFilter = filteredProducts.filter(e =>
-        e.id.toLowerCase().startsWith(searchProduct.toLowerCase())
-      )
-      setProductData(searchFilter)
+      const filteredCategory = filteredProducts.filter(e => e.catogery === catogrey);
+      setProductData(filteredCategory);
     }
-  }, [searchProduct, productname, catogrey, pathname])
+  } else {
+    const searchFilter = filteredProducts.filter(e =>
+      e.id.toLowerCase().startsWith(searchProduct.toLowerCase())
+    );
+
+    if (searchFilter.length === 0) {
+      toast.error("Product not found. Please enter a valid product ID.");
+    }
+
+    setProductData(searchFilter);
+  }
+}, [searchProduct, productname, catogrey, pathname]);
 
   // Set product data on page load or when params change
   useEffect(() => {
@@ -119,9 +125,11 @@ const ProductsCatalog = () => {
                       onClick={() => {
                         let findData = cartProduct.some((findId) => findId.id == e.id)
                         if (findData) {
-                          alert("Item already added!")
+                          toast.error("Product already exist!")
                         } else {
+                          toast.success("Product added")
                           setCartProduct(prev => [...prev, e])
+                          
                         }
                       }}
                     >
@@ -138,6 +146,7 @@ const ProductsCatalog = () => {
           </p>
         )}
       </div>
+      <ToastContainer />
     </div>
   )
 }
