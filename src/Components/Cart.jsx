@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import NavBar from './NavBar'
 
 const Cart = () => {
-  let {cartProduct}=useContext(AppContext)
+  let {cartProduct,setCartProduct}=useContext(AppContext)
   return (
     <div>
       <NavBar />
@@ -24,6 +24,10 @@ const Cart = () => {
                 <div className='flex flex-col w-full  gap-2'>
                   <p>Product Id: {e.id}</p>
                   <Link className='cursor-pointer text-center bg-[#1E2938] text-white px-3 py-1 rounded-md' onClick={() => scrollTo(0, 0)} to={`/productInfo/${e.id}`}>View</Link>
+                  <button onClick={()=>{
+                   let filteredProduct= cartProduct.filter(item=>item.id!==e.id)
+                    setCartProduct([...filteredProduct])
+                  }} className='cursor-pointer text-center bg-red-500 text-white px-3 py-1 rounded-md'>Delete</button>
                 </div>
               </div>
             ))}

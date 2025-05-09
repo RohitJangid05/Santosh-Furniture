@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useParams, Link } from 'react-router-dom'
+import { FaSearch } from 'react-icons/fa'
 import NavBar from './NavBar'
 import { products } from '../assets/assets'
-import { Link } from 'react-router-dom'
-import { FaSearch } from 'react-icons/fa'
 import { AppContext } from '../Context/FurnitureContext'
 
 const ProductsCatalog = () => {
@@ -12,8 +11,8 @@ const ProductsCatalog = () => {
   const [searchProduct, setSearchProduct] = useState("")
   const { productname, catogrey } = useParams()
   const { pathname } = useLocation()
-
-  let {setCartProduct}=useContext(AppContext)
+  const { cartProduct, setCartProduct } = useContext(AppContext)
+  console.log(cartProduct)
 
   // Filter categories
   useEffect(() => {
@@ -60,7 +59,7 @@ const ProductsCatalog = () => {
   return (
     <div className='flex flex-col gap-3 items-center w-full'>
       <NavBar />
-      <div className='flex flex-wrap gap-4 w-full justify-center p-3 rounded-lg shadow-sm shadow-gray-400 bg-white'>
+      <div className='mt-22 flex flex-wrap gap-4 w-full justify-center p-3 rounded-lg shadow-sm shadow-gray-400 bg-white'>
         <div className="flex flex-wrap gap-2 justify-center">
           {catogery.map((item, index) => (
             <Link
@@ -92,34 +91,51 @@ const ProductsCatalog = () => {
         </form>
       </div>
 
-      <div className="p-4 md:p-8`">
+      <div className="p-4 md:p-8 w-full">
         {productData.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
             {productData.map((e, i) => (
               <div
                 key={e.id}
-                className="bg-white min-w-72 rounded-xl shadow-sm  shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300"
+                className="bg-white w-full rounded-xl shadow-sm shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300"
               >
-                
-                  <img
-                    src={e.img}
-                    alt={`product-${i}`}
-                    className="w-full h-60 mb-5 object-contain"
-                  />
-                
-                <div className='flex flex-col w-full  gap-2'>
+                <img
+                  src={e.img}
+                  alt={`product-${i}`}
+                  className="w-full h-48 sm:h-52 md:h-60 mb-5 object-contain"
+                />
+                <div className='flex flex-col w-full gap-2'>
                   <p>Product Id: {e.id}</p>
                   <div className='w-full flex justify-between'>
-                  <Link className='cursor-pointer bg-[#1E2938] text-white px-3 py-1 rounded-md' onClick={() => scrollTo(0, 0)} to={`/productInfo/${e.id}`}>View</Link>
-                  <button className='cursor-pointer bg-[#1E2938] text-white px-3 py-1 rounded-md' onClick={() => setCartProduct(prev => [...prev, e])}
-                  >Add</button>
+                    <Link
+                      className='cursor-pointer bg-[#1E2938] text-white px-3 py-1 rounded-md'
+                      onClick={() => scrollTo(0, 0)}
+                      to={`/productInfo/${e.id}`}
+                    >
+                      View
+                    </Link>
+                    <button
+                      className='cursor-pointer bg-[#1E2938] text-white px-3 py-1 rounded-md'
+                      onClick={() => {
+                        let findData = cartProduct.some((findId) => findId.id == e.id)
+                        if (findData) {
+                          alert("Item already added!")
+                        } else {
+                          setCartProduct(prev => [...prev, e])
+                        }
+                      }}
+                    >
+                      Add
+                    </button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-center text-gray-600 text-lg w-full h-[80vh] flex justify-center items-center">No products found.</p>
+          <p className="text-center text-gray-600 text-lg w-full h-[80vh] flex justify-center items-center">
+            No products found.
+          </p>
         )}
       </div>
     </div>
