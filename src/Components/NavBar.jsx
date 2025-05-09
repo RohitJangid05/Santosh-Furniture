@@ -9,7 +9,7 @@ const NavBar = () => {
     let {pathname} = useLocation()
     let {cartProduct}=useContext(AppContext)
     return (
-        <nav className='fixed w-full flex justify-between items-center px-5 py-3 shadow-sm bg-white z-10'>
+        <nav className='fixed top-0 w-full flex justify-between items-center px-5 py-3 shadow-sm bg-white z-10'>
             <Link to="/"><img className='w-15' src={assets.logo} alt="Logo" /></Link>
             <div className='flex justify-center items-center gap-5'>
 {

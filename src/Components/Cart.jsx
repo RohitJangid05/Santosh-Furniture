@@ -6,15 +6,16 @@ import NavBar from './NavBar'
 const Cart = () => {
   let {cartProduct,setCartProduct}=useContext(AppContext)
   return (
-    <div>
+    <>
       <NavBar />
+    <div className='mt-20'>
       <div className="p-4 md:p-8">
         {cartProduct.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {cartProduct.map((e, i) => (
               <div
-                key={e.id}
-                className="bg-white rounded-xl shadow-sm shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300"
+              key={e.id}
+              className="bg-white rounded-xl shadow-sm shadow-gray-300 p-5 overflow-hidden hover:scale-105 transition-transform duration-300"
               > 
                  <img
                     src={e.img}
@@ -25,7 +26,7 @@ const Cart = () => {
                   <p>Product Id: {e.id}</p>
                   <Link className='cursor-pointer text-center bg-[#1E2938] text-white px-3 py-1 rounded-md' onClick={() => scrollTo(0, 0)} to={`/productInfo/${e.id}`}>View</Link>
                   <button onClick={()=>{
-                   let filteredProduct= cartProduct.filter(item=>item.id!==e.id)
+                    let filteredProduct= cartProduct.filter(item=>item.id!==e.id)
                     setCartProduct([...filteredProduct])
                   }} className='cursor-pointer text-center bg-red-500 text-white px-3 py-1 rounded-md'>Delete</button>
                 </div>
@@ -37,6 +38,7 @@ const Cart = () => {
         )}
       </div>
     </div>
+        </>
   )
 }
 
