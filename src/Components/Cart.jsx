@@ -36,7 +36,7 @@ const Cart = () => {
               ))}
             </div>
           ) : (
-            <p className="text-center text-gray-600 text-lg w-full h-[80vh] flex justify-center items-center">No products found.</p>
+            <p className="text-center text-gray-600 text-lg w-full h-[80vh] flex justify-center items-center">Cart is Empty</p>
           )}
         </div>
       </div>
