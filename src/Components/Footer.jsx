@@ -1,6 +1,6 @@
-import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import MapSection from "./MapSection";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,10 +20,17 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-white transition">Home</a></li>
-            <li><a href="#" className="hover:text-white transition">Shop</a></li>
-            <li><a href="#" className="hover:text-white transition">About</a></li>
-            <li><a href="#" className="hover:text-white transition">Contact</a></li>
+            <li><Link onClick={()=>window.scrollTo({top:0,behavior:"smooth"})}  className="hover:text-white transition">Home</Link></li>
+            <li><Link onClick={()=>{
+            const screenWidth = window.innerWidth;
+            if (screenWidth < 768) {
+              window.scrollTo({ top: 380, behavior: "smooth" });
+            } else {
+              window.scrollTo({ top: 585, behavior: "smooth" });
+            }}}
+              className="hover:text-white transition">Shop</Link></li>
+            <li><a href="/about" className="hover:text-white transition">About</a></li>
+            <li><a href="/contact" className="hover:text-white transition">Contact</a></li>
           </ul>
         </div>
 
@@ -31,10 +38,8 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Support</h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-white transition">FAQs</a></li>
             <li><a href="#" className="hover:text-white transition">Shipping & Returns</a></li>
-            <li><a href="#" className="hover:text-white transition">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition">Terms of Service</a></li>
+            <li><a href="#" className="hover:text-white transition">Customized Product</a></li>
           </ul>
         </div>
 
@@ -42,10 +47,7 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex gap-4 text-xl text-gray-400">
-            <a href="#" className="hover:text-white transition"><FaFacebookF /></a>
-            <a href="#" className="hover:text-white transition"><FaInstagram /></a>
-            <a href="#" className="hover:text-white transition"><FaTwitter /></a>
-            <a href="#" className="hover:text-white transition"><FaLinkedin /></a>
+            <a target="blank" href="https://www.instagram.com/santosh.furniture_sf/" className="hover:text-white transition"><FaInstagram /></a>
           </div>
         </div>
       </div>

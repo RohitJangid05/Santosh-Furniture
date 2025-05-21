@@ -1,6 +1,6 @@
-import React from "react";
-
+import { useNavigate } from 'react-router-dom';
 const MapSection = () => {
+  let navigate = useNavigate()
   return (
     <>
     <hr className="h-0.5 border-none bg-zinc-400" />
@@ -18,6 +18,9 @@ const MapSection = () => {
               <p>India</p>
               <p className="mt-2"><strong>Phone:</strong> +91 9448122329</p>
               <p><strong>Email:</strong> santoshfurniture@gmail.com</p>
+              <button
+               onClick={() => {navigate('/about'); scrollTo(0,0)}}
+               className="px-4 py-2 mt-2 bg-gray-900 text-white text-lg rounded-full hover:bg-gray-700 transition-all duration-300 cursor-pointer">About us</button>
             </div>
           </div>
 

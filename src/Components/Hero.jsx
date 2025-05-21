@@ -1,6 +1,28 @@
-import React from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  let img1Ref=useRef(null)
+  let img2Ref=useRef(null)
+  
+ useEffect(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: img1Ref.current, // can be any common trigger
+      start: "top 20%",
+      end: "bottom 70%",
+      toggleActions: "play none none reverse",
+      scrub:3
+    },
+  });
+
+  tl.to(img1Ref.current, { rotate:5 }, 0)
+    .to(img2Ref.current, { rotate:-5}, 0);
+}, []);
+
   return (
     <section className="relative bg-[#f8f5f2] overflow-hidden py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
@@ -30,11 +52,13 @@ const Hero = () => {
             src="hero1.jpeg"
             alt="Hero Image"
             className="absolute w-[60%] h-auto top-0 left-0 rounded-3xl shadow-xl object-cover z-10"
+            ref={img1Ref}
           />
           <img
             src="hero2.webp"
             alt="Hero Image"
             className="absolute w-[60%] h-auto bottom-0 right-0 rounded-3xl shadow-xl object-cover transform scale-105 rotate-2 z-0"
+            ref={img2Ref}
           />
         </div>
       </div>

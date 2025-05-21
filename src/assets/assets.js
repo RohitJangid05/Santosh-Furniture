@@ -8,7 +8,12 @@ export let assets = {
     diningSetcatalog: "/diningSetCatalog.avif",
     bedCatalog: '/bedCatalog.webp',
     moreCatalog:'/moreCatalog.png',
-    logo: "/logo.png"
+    logo: "/logo.png",
+    about1:"about1.webp",
+    about2:"about2.jpg",
+    about3:"about3.webp",
+    about4:"about4.jpeg",
+    contact:"contact.jpg"
 }
 
 export let products = [
