@@ -16,11 +16,15 @@ const MapSection = () => {
               <p>Santosh Furniture</p>
               <p>Omkar Nagar Angol Main Road, Belagavi, Karnataka 590011</p>
               <p>India</p>
-              <p className="mt-2"><strong>Phone:</strong> +91 9448122329</p>
-              <p><strong>Email:</strong> santoshfurniture@gmail.com</p>
-              <button
+              <p><strong>Email:</strong> santoshfurniture005@gmail.com</p>
+             <div className='flex gap-3 mt-4'>
+               <button
                onClick={() => {navigate('/about'); scrollTo(0,0)}}
-               className="px-4 py-2 mt-2 bg-gray-900 text-white text-lg rounded-full hover:bg-gray-700 transition-all duration-300 cursor-pointer">About us</button>
+               className="px-4 py-2 bg-gray-900 text-white text-lg rounded-md hover:bg-gray-700 transition-all duration-300 cursor-pointer">About us</button>
+               <button
+               onClick={() => {navigate('/contact'); scrollTo(0,0)}}
+               className="px-4 py-2 bg-gray-900 text-white text-lg rounded-md hover:bg-gray-700 transition-all duration-300 cursor-pointer">Contact us</button>
+             </div>
             </div>
           </div>
 

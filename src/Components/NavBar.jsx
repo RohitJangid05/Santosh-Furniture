@@ -14,7 +14,7 @@ const NavBar = () => {
             <div className='flex justify-center items-center gap-5'>
 {
     pathname=='/cart'?"":
-                <Link to="/cart" className='relative text-3xl font-bold text-[#3F3122]'>
+                <Link to="/cart" onClick={()=>scrollTo(0,0)}  className='relative text-3xl font-bold text-[#3F3122]'>
                     <FaShoppingCart className='' />
                     {cartProduct.length>0?<div className='flex justify-center items-center absolute top-[-4px] right-[-4px]  bg-white border-[#3F3122] border-2 p-2 text-[10px] w-4 h-4 rounded-full'>{cartProduct.length}</div>:""}
                 </Link>

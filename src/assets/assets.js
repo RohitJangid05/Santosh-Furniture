@@ -90,5 +90,10 @@ export let products = [
     { id: "bed-10", productName: "bed", catogery: "bouble bed", img: "/images/bed10.jpg" },
     { id: "bed-11", productName: "bed", catogery: "bouble bed", img: "/images/bed11.webp" },
 
-    {id:"dif-01", productName:"more",img:'/images/more1.png'}
+    {id:"dif-01", productName:"more", img:'/images/more1.png'},
+    {id:"dif-02", productName:"more", img:'/images/more2.jpg'},
+    {id:"dif-03", productName:"more", img:'/images/more3.jpg'},
+    {id:"dif-04", productName:"more", img:'/images/more4.webp'},
+    {id:"dif-05", productName:"more", img:'/images/more5.webp'},
+    {id:"dif-05", productName:"more", img:'/images/more6.webp'},
 ];
