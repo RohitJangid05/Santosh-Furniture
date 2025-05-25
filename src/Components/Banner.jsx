@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { AppContext } from '../Context/FurnitureContext';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollingText from './ScrollingText';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,20 +40,7 @@ const Banner = () => {
           </h1>
         </div>
       </div>
-      <div className="overflow-hidden whitespace-nowrap py-3 border-2 w-full border-slate-300">
-        <div className="animate-scroll flex w-max gap-3 text-base sm:text-lg md:text-2xl font-medium text-[#364152]">
-          {[
-            "Teak Wood", "Pine Wood", "Beach Wood", "Hassan Wood",
-            "Door Frame", "Liping Patti", "Sofa", "Door",
-            "Teak Wood", "Pine Wood", "Beach Wood", "Hassan Wood",
-            "Door Frame", "Liping Patti", "Sofa", "Door"
-          ].map((item, index) => (
-            <p key={index} className="bg-[#e8c093b9] px-4 py-2 rounded-lg flex-shrink-0">
-              {item}
-            </p>
-          ))}
-        </div>
-      </div>
+      <ScrollingText/>
     </>
   );
 };
