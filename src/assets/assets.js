@@ -95,5 +95,5 @@ export let products = [
     {id:"dif-03", productName:"more", img:'/images/more3.jpg'},
     {id:"dif-04", productName:"more", img:'/images/more4.webp'},
     {id:"dif-05", productName:"more", img:'/images/more5.webp'},
-    {id:"dif-05", productName:"more", img:'/images/more6.webp'},
+    {id:"dif-06", productName:"more", img:'/images/more6.webp'},
 ];

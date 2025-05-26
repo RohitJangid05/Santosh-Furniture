@@ -2,7 +2,6 @@ import { useRef, useState, useContext } from 'react';
 import emailjs from 'emailjs-com';
 import NavBar from './NavBar';
 import { AppContext } from '../Context/FurnitureContext';
-import privateKeys from '../../privateKey';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Contact = () => {
@@ -18,10 +17,10 @@ const sendEmail = (e) => {
 
   emailjs
     .sendForm(
-      privateKeys.service_id,
-      privateKeys.templet_id,
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
       form.current,
-      privateKeys.public_key
+      import.meta.env.VITE_PUBLIC_KEY
     )
     .then(
       (result) => {
